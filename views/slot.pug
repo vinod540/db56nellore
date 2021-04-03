@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= title       
+        - var image_names= ["Animation.jpg","Anthony_Stark.jpg","flower.jpg","Wonder_Woman.jpg","dice.jpg"]            
+            -for(var i=0;i<3;i++){
+                - var number=Math.floor(Math.random()*5)
+                 img(src= `/images/${image_names[number]}` alt="flower image", height="300", width="300")
+            -}

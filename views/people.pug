@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  - let people = [{place:"tirupathi",famous:"laddu",cost:"250"},{place:"nellore",famous:"prawns",price:"500"},{place:"rayalaseema",famous:"pickle",price:"350"}]
+  div(class="container-fluid mt-2")
+  div(class="row")
+    each product,index in products
+        div(class="col-sm-2 bg-dangerous m-2 p-2" onclick=`buy(${index})`) #{people.place} - #{people.famous} - #{people.cost}
+  script.
+    function buy(itemNo){
+      alert(`You purchased Item ${itemNo+1}`)
+    }

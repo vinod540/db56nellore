@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1= title
+    p Without phone no human can survive in this fast paced technological world.
+    div(class="container-fluid")
+        div(class="row")
+            -
+                let phone = [
+                    {
+                        "name": "ultraseries",
+                        "cost":700,
+                        "brand": "samsung"                        
+                    },
+                    {
+                        "name": "promax",
+                        "cost": 1000,
+                        "brand": "Iphone"
+                    },
+                    {
+                        "name": "redminote",
+                        "cost": 800,
+                        "brand": "xiaomi"
+                    },                   
+                ]
+            each v in phone
+                div(class="col-sm-2") #{v.name} 
+                br
+                br
+                div(class="col-sm-2") #{v.cost}
+                div(class="col-sm-2") #{v.brand}
+                
