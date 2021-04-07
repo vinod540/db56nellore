@@ -1,8 +1,17 @@
 var Phone = require('../models/phone');
+
 // List of all Phones
-exports.phone_list = function(req, res) {
-res.send('NOT IMPLEMENTED: Phone list');
+
+exports.phone_list = async function(req, res) {
+    try {
+        thePhones = await Phone.find();
+        res.send(thePhones);
+    } catch (err) {
+        res.error(500, `{"error": ${err}}`);
+    }
+
 };
+
 // for a specific Phones.
 exports.phone_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: Phone detail: ' + req.params.id);
