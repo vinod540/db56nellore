@@ -18,5 +18,15 @@
   "main": "app.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Heroku Link : https://dashboard.heroku.com/apps/db56nellore</br>",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinod540/db56nellore.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/vinod540/db56nellore/issues"
+  },
+  "homepage": "https://github.com/vinod540/db56nellore#readme"
 }
