@@ -6,23 +6,7 @@ block content
     div(class="container-fluid")
         div(class="row")
             -
-                let phone = [
-                    {
-                        "name": "ultraseries",
-                        "cost":700,
-                        "brand": "samsung"                        
-                    },
-                    {
-                        "name": "promax",
-                        "cost": 1000,
-                        "brand": "Iphone"
-                    },
-                    {
-                        "name": "redminote",
-                        "cost": 800,
-                        "brand": "xiaomi"
-                    },                   
-                ]
+                let phone = results
             each v in phone
                 div(class="col-sm-2") #{v.name} 
                 br
