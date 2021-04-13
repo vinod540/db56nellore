@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  h1= title
+
+  - let phoneid = toShow._id
+  - let phonename = toShow.phonename
+  - let phonebrand = toShow.brand
+  - let phonecost = toShow.cost
+  
+  div.row(class='mb-2')
+    div.mr-1 ID is
+    div #{phoneid}
+  - let actionid = "/resource/phones/" + phoneid
+  form(id='PhoneForm', action= actionid, method="PUT")
+    div.form-group
+        label.phoneAttr(for='phonename') Phone name
+        input#phonename(type='text', name='phonename', value= phonename )
+    div.form-group
+        label.phoneAttr(for='brand') Phone brand
+        input#brand(type='text', name='brand', value= phonebrand )
+    div.form-group
+        label.phoneAttr(for='cost') Phone cost
+        input#cost(type='number', name='cost', value= phonecost )
+    input(type="submit")
+
+  script.
+    document.forms['PhoneForm'].addEventListener('submit', (event) => {
+      event.preventDefault();
+      // TODO do something here to show user that form is being submitted
+      fetch(event.target.action, {
+        method: 'PUT',
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+      }).then((resp) => {
+        return resp.json(); // or resp.text() or whatever the server sends
+      }).then((body) => {
+        alert("Update succeded")
+        // TODO handle body
+      }).catch((error) => {
+        // TODO handle error
+        alert("Update failed " + error )
+      });
+    });
+

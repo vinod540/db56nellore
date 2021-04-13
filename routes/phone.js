@@ -13,3 +13,11 @@ router.get('/detail', phone_controllers.phone_view_one_Page);
 /* GET create phone page */
 router.get('/create', phone_controllers.phone_create_Page);
 
+/* GET create update page */
+router.get('/update', phone_controllers.phone_update_Page);
+
+/* GET create phone page */
+router.get('/delete', phone_controllers.phone_delete_Page);
+
+
+

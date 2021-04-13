@@ -117,3 +117,32 @@ exports.phone_create_Page =  function(req, res) {
     }
 };
 
+// Handle building the view for updating a phone.
+// query provides the id
+exports.phone_update_Page =  async function(req, res) {
+    console.log("update view for item "+req.query.id)
+    try{
+        let result = await Phone.findById(req.query.id)
+        res.render('phoneupdate', { title: 'Phone Update', toShow: result });
+    }
+    catch(err){
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
+    }
+};
+
+// Handle a delete one view with id from query
+exports.phone_delete_Page = async function(req, res) {
+    console.log("Delete view for id "  + req.query.id)
+    try{
+        result = await Phone.findById(req.query.id)
+        res.render('phonedelete', { title: 'Phone Delete', toShow: result });
+    }
+    catch(err){
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
+    }
+};
+
+
+
