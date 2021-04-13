@@ -44,10 +44,19 @@ exports.phone_create_post = async function(req, res) {
 };
 
 
-// Handle Phones delete form on DELETE.
-exports.phone_delete = function(req, res) {
-res.send('NOT IMPLEMENTED: Phone delete DELETE ' + req.params.id);
+// Handle Phone delete on DELETE.
+exports.phone_delete = async function(req, res) {
+    console.log("delete "  + req.params.id)
+    try {
+        result = await Phone.findByIdAndDelete( req.params.id)
+        console.log("Removed " + result)
+        res.send(result)
+    } catch (err) {
+        res.status(500)
+        res.send(`{"error": Error deleting ${err}}`);
+    }
 };
+
 
 // Handle Phone update form on PUT.
 exports.phone_update_put = async function(req, res) {
@@ -77,5 +86,19 @@ exports.phone_view_all_Page = async function(req, res) {
         res.render('phone', { title: 'Phones Search Results', results: thePhones });
     } catch (err) {
         res.error(500, `{"error": ${err}}`);
+    }
+};
+
+// Handle a show one view with id specified by query
+exports.phone_view_one_Page = async function(req, res) {
+    console.log("single view for id "  + req.query.id)
+    try{
+        result = await Phone.findById( req.query.id)
+        res.render('phonedetail', 
+{ title: 'Phone Detail', toShow: result });
+    }
+    catch(err){
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
     }
 };
