@@ -9,3 +9,7 @@ module.exports = router;
 
 /* GET detail phone page */
 router.get('/detail', phone_controllers.phone_view_one_Page);
+
+/* GET create phone page */
+router.get('/create', phone_controllers.phone_create_Page);
+
