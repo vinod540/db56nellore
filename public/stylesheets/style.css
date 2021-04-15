@@ -4,10 +4,43 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .phoneAttr {
-  background-color: aquamarine;
-  width: 120px;
+  background-color: orange;
+  text-align: center;
+  font-size: 15px;
+  width: 300px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
+
+.result {
+  background-color: orange;
+  width: 300px;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  text-align: center;
+  background-color:green;
+  color: #fff;
+}
+
+

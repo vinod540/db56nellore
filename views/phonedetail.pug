@@ -1,22 +1,25 @@
 extends layout
 
 block content
-  h1= title
+  h1(id='title')= title
 
-  - let phoneid = toShow._id
-  - let name = toShow.name
-  - let brand = toShow.brand
-  - let cost = toShow.cost
-  div
-    div.row
-      div(class='phoneAttr mr-3') Phone ID is:
-      div #{phoneid}
-    div.row
-      div(class='phoneAttr mr-3') Phone Name is:
-      div #{name}
-    div.row
-      div(class='phoneAttr mr-3') Phone Brand is:
-      div #{brand}
-    div.row
-      div(class='phoneAttr mr-3') Phone Cost is:
-      div #{cost}
+  if (toShow == null)
+    h2(class='null') No instance to display
+  else
+    - let phoneid = toShow._id
+    - let name = toShow.name
+    - let brand = toShow.brand
+    - let cost = toShow.cost
+    div(class='cont')
+      div.row
+        div(class='phoneAttr mr-3') Phone ID is:
+        div(class='result') #{phoneid}
+      div.row
+        div(class='newspaperAttr mr-3') Phone Name is:
+        div(class='result') #{name}
+      div.row
+        div(class='newspaperAttr mr-3') Phone Brand is:
+        div(class='result') #{brand}
+      div.row
+        div(class='newspaperAttr mr-3') Phone Cost is:
+        div(class='result') #{cost}
