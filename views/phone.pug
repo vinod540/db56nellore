@@ -9,7 +9,7 @@ block content
                 let phone = results
             each v in phone
                 - let destination = `dispatch(\"/phone/update?id=${v._id}\")`
-                div(class="row-sm-2" class='m-1') Phone #{v.phonename}(#{v.brand}) is #{v.cost}
+                div(class="row-sm-2" class='m-1') Phone #{v.name}(#{v.brand}) is #{v.cost}
                     button(class="btn-primary ml-1", onclick=destination) Update
             script.
                 function dispatch(path){
