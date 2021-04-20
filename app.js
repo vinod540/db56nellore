@@ -6,6 +6,7 @@ var logger = require('morgan');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+
 passport.use(new LocalStrategy(
   function(username, password, done) {
   Account.findOne({ username: username }, function (err, user) {
@@ -87,7 +88,7 @@ app.use(require('express-session')({
   saveUninitialized: false
   }));
   app.use(passport.initialize());
-  app.use(passport.session());
+  app.use(passport.session());  
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
