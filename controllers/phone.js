@@ -41,7 +41,7 @@ exports.phone_create_post = async function(req, res) {
         }
         catch(err){
         // res.error(500,`{"error": ${err}}`);
-        res.status(500).send("Not a valid pen");
+        res.status(500).send("Not a valid phone");
         }
         };
 
