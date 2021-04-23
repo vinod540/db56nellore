@@ -35,15 +35,15 @@ exports.phone_create_post = async function(req, res) {
     document.name = req.body.name;
     document.cost = req.body.cost;
     document.brand = req.body.brand;
-    try {
+    try{
         let result = await document.save();
         res.send(result);
-    } catch (err) {
-        res.error(500, `{"error": ${err}}`);
-            res.status(500)
-            res.send(`{"error": Error deleting ${err}}`);
         }
-};
+        catch(err){
+        // res.error(500,`{"error": ${err}}`);
+        res.status(500).send("Not a valid pen");
+        }
+        };
 
 
 // Handle Phone delete on DELETE.
