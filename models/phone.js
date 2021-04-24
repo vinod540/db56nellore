@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 const phoneSchema = mongoose.Schema({
-name: String,
+name: {
+    type: String,
+    minLength: 5
+    },
 brand: String,
 cost: {
     type:Number,
